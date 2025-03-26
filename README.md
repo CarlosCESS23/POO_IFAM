@@ -110,6 +110,72 @@ public class ContaCorrente {
 }
 ````
 
+## Exercicio 3: FAça uma classe caixa com aos atributos, largura, altura e profundidade. Faça sobrecarga de métodos e construtores que atendam estas chamadas
+<h3>
+    <ol>
+        <li>Construtores com 3 assinatura diferente</li>
+        <li>Metódos com 3 assinaturas diferente</li>
+    </ol>
+</h3>
+
+````java
+public class Caixa {
+    private double largura,altura,profundidade;
+
+    public Caixa(double x){
+        this.largura = x;
+        this.altura = x;
+        this.profundidade = x;
+    }
+    public Caixa(){
+        this.largura = 0;
+        this.altura = 0;
+        this.profundidade = 0;
+    }
+    public Caixa(double x,double y, double z){
+        this.largura = x;
+        this.profundidade = y;
+        this.altura = z;
+    }
+
+    public double volume(){
+        double volume = largura * altura * profundidade;
+        return volume;
+    }
+    public double volume(double x){
+        this.largura = this.profundidade = this.altura = x;
+        double volume = this.largura * this.profundidade * this.altura;
+            if(volume == (largura * altura * profundidade)){
+                System.out.println("O x é igual a multiplicação de largura,altura e profundidade");
+                return volume;
+            }
+        System.out.println("O valor de x não é igual a multiplicação de largura, altura e profundidade");
+            return volume;
+    }
+    public double volume(double x,double y, double z){
+        this.largura = x;
+        this.altura = y;
+        this.profundidade =z;
+        double volume = largura * altura * profundidade;
+
+        System.out.println("O valor do volume da caixa é: ");
+        return volume;
+    }
+}
+class TesteCaixa {
+    public static void main(String[] args) {
+        Caixa c1 = new Caixa();
+        Caixa c2 = new Caixa(12.3);
+        Caixa c3 = new Caixa(9.9,2.2,5.3);
+
+        System.out.println(c2.volume());
+        System.out.println(c2.volume(12.3));
+        System.out.println(c2.volume(3.2,3.2,4.3));;
+
+    }
+}
+````
+
 # Encapsulamento
 
 <li>Public -> Pode acessar fora da classe</li>
